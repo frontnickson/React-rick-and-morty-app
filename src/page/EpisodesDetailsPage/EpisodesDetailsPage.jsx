@@ -53,7 +53,7 @@ function EpisodesDetailsPage() {
                 {charImage && charImage.map(item => (
                     <ul className={styles.character__item}>
                         <li className={styles.character__list}>
-                            <img src={item.image && item.image} />
+                            <img alt="episodes_image" src={item.image && item.image} />
                             <div className={styles.character__info__container}>
                                 <h3>{item.name ? item.name : "not name"}</h3>
                                 {item.species ? item.species : "not species"}
