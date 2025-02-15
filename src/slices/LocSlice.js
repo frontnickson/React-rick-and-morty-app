@@ -1,6 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { URL_LOCATION } from "../constants/API";
 
 export const getLoc = createAsyncThunk(
   "loc/getLoc",

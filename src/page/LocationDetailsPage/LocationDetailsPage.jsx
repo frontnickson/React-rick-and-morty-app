@@ -17,7 +17,7 @@ function LocationDetailsPage() {
   const { id } = useParams()
   const [residents, setResidents] = useState([]);
 
-  useEffect(() => { dispatch(getLoc(URL_LOCATION + id)) }, [id, dispatch])
+  useEffect(() => { dispatch(getLoc(URL_LOCATION + id)) }, [id, loc, dispatch])
 
   useEffect(() => {
     const getResidents = async () => {
@@ -31,7 +31,7 @@ function LocationDetailsPage() {
     }
 
     getResidents()
-  }, [dispatch])
+  }, [id, loc, dispatch])
 
   return (
     <div className={styles}>

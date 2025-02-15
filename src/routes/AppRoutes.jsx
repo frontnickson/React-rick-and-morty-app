@@ -13,6 +13,7 @@ import FavoritesPage from '../page/FavoritesPage/FavoritesPage'
 function AppRoutes() {
     return (
         <Routes>
+            <Route index element={<CharacterPage />} />
             <Route index path='/character' element={<CharacterPage />} />
             <Route path='/character/:id' element={<PersonPage />} />
             <Route path='/episode' element={<EpisodesPage />} />
