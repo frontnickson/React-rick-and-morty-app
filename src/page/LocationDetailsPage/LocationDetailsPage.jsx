@@ -12,12 +12,12 @@ import axios from 'axios';
 
 function LocationDetailsPage() {
   const dispatch = useDispatch()
-  const { loc, isLoading } = useSelector((state) => state.loc)
-  
+  const { loc } = useSelector((state) => state.loc)
+
   const { id } = useParams()
   const [residents, setResidents] = useState([]);
 
-  useEffect(() => { dispatch(getLoc(URL_LOCATION + id)) }, [dispatch])
+  useEffect(() => { dispatch(getLoc(URL_LOCATION + id)) }, [id, dispatch])
 
   useEffect(() => {
     const getResidents = async () => {
@@ -47,7 +47,7 @@ function LocationDetailsPage() {
         <div className={styles.loc__info_container}>
           <div><h1>{loc && loc.name}</h1></div>
           <div className={styles.episode__info_inner}>
-            <div>Type: {loc && loc.type}</div>
+            <div key={loc.id}>Type: {loc && loc.type}</div>
           </div>
         </div>
 
@@ -55,7 +55,7 @@ function LocationDetailsPage() {
           {residents && residents.map(item => (
             <ul className={styles.character__item}>
               <li className={styles.character__list}>
-                <img src={item.image && item.image} />
+                <img alt='location_image' src={item.image && item.image} />
                 <div className={styles.character__info__container}>
                   <h3>{item.name ? item.name : "not name"}</h3>
                   {item.species ? item.species : "not species"}

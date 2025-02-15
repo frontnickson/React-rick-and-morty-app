@@ -7,7 +7,7 @@ function CharacterList({ finishList, activeButton }) {
   const [character, setCharacter] = useState(() => {
     const getCharacter = localStorage.getItem('character')
     return getCharacter ? JSON.parse(getCharacter) : []
-  })  
+  })
 
   const [list, setList] = useState(8);
   const limit = finishList.slice(0, list);
@@ -21,7 +21,7 @@ function CharacterList({ finishList, activeButton }) {
   };
 
   const getFavorites = (id, item) => {
-    if(!character.some(char => char.id === id)){
+    if (!character.some(char => char.id === id)) {
       setCharacter([...character, item])
     } else {
       const updateChar = character.filter(charId => charId.id !== id)
@@ -40,6 +40,7 @@ function CharacterList({ finishList, activeButton }) {
               <button className={styles.button__add} onClick={() => { getFavorites(item.id, item) }}>{character.some(char => char.id === item.id) ? "delete" : "add"}</button>
               <Link to={`/character/${item.id}`}>
                 <img
+                  alt='character_image'
                   src={item.image || "https://img.freepik.com/premium-vector/get-this-doodle-icon-404-error_67813-19921.jpg?w=1060"}
                   className={styles.character__image}
                 />

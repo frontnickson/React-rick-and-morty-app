@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-
 
 
 import styles from './FavoritesPage.module.css'
@@ -27,7 +25,7 @@ function FavoritesPage() {
             {char.length > 0 ? char.map(item => (
                 <ul key={item.id}>
                     <li className={styles.favorites__list}>
-                        <img src={char && item.image} className={styles.image} />
+                        <img alt='favorite_image' src={char && item.image} className={styles.image} />
                         {item.name}
                         <button className={styles.button} onClick={() => { deleteChar(item.id) }}>delete</button>
                     </li>

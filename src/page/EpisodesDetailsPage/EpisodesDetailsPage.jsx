@@ -14,10 +14,10 @@ function EpisodesDetailsPage() {
     const { id } = useParams()
 
     const dispatch = useDispatch()
-    const { episode, isLoading } = useSelector((state) => state.episode)
+    const { episode } = useSelector((state) => state.episode)
     const [charImage, setCharImage] = useState([])
 
-    useEffect(() => { dispatch(getEpisode(URL_EPISODE + id)) }, [dispatch])
+    useEffect(() => { dispatch(getEpisode(URL_EPISODE + id)) }, [id, dispatch])
 
     useEffect(() => {
         const getImageCharacters = async () => {

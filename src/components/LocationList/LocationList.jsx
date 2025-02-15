@@ -1,10 +1,10 @@
-import React, { useState } from 'react'
-import { Link, useParams } from 'react-router-dom';
+import React from 'react'
+import { Link } from 'react-router-dom';
 
 
 import styles from './LocationList.module.css'
 
-function LocationList({ list }) {    
+function LocationList({ list }) {
     return (
         <>
             <div className={styles.location__container}>

@@ -13,10 +13,9 @@ function PersonPage() {
 
   const { id } = useParams();
   const dispatch = useDispatch()
-  const { person, isLoading } = useSelector((state) => state.person)
-  console.log(person);
+  const { person } = useSelector((state) => state.person)
 
-  useEffect(() => { dispatch(getPerson(URL_CHARACTER + id)) }, [dispatch])
+  useEffect(() => { dispatch(getPerson(URL_CHARACTER + id)) }, [id, dispatch])
 
   return (
     <div className={styles.container}>
@@ -30,7 +29,7 @@ function PersonPage() {
           </div>
         </Link>
         <div>
-          <img src={person ? person.image : notimage} className={styles.image} />
+          <img alt='person_image' src={person ? person.image : notimage} className={styles.image} />
         </div>
         <div>
           <h1>{person ? person.name : "Not name"}</h1>

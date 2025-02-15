@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { getLocation } from '../../slices/LocationSlice';
-import { URL_LOCATION } from '../../constants/API';
 
 
 import LocationList from '../../components/LocationList/LocationList';
@@ -29,21 +28,21 @@ function LocationPage() {
             const filterlist = location.results.filter(item => { return item.name.includes(value) })
             setList(filterlist)
         }
-    }, [location, value])
+    }, [location, value, isLoading])
 
     useEffect(() => {
         if (isLoading) {
             const filterType = location.results.filter(item => { return item.type === typeLocation })
             setList(filterType)
         }
-    }, [location, typeLocation])
+    }, [location, typeLocation, isLoading])
 
     useEffect(() => {
         if (isLoading) {
             const filterDemension = location.results.filter(item => item.dimension === dimension)
             setList(filterDemension)
         }
-    }, [location, dimension])
+    }, [location, dimension, isLoading])
 
     return (
         <div className={styles.container}>
