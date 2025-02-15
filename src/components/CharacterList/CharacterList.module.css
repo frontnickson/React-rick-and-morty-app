@@ -1,0 +1,54 @@
+.character__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 250px);
+    justify-content: space-between;
+}
+
+.character__item{
+    box-shadow: var(--box-shadow);
+    margin-bottom: 15px;
+}
+
+.character__list{
+    position: relative;
+}
+
+.character__image{
+    height: 250px;
+    width: 100%;
+    border-radius: 7px 7px 0px 0px;
+}
+
+.character__info__container{
+    height: 80px;
+    padding: 15px;
+}
+
+.button__add{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+}
+
+.character__button_container {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button{
+    height: 40px;
+    width: 120px;
+    cursor: pointer;
+    border: 1px solid var(--color-text-button);
+    border-radius: var(--box-radius);
+    background-color: var(--background-color-button);
+    color: var(--color-text-button);
+}
+
+.button:disabled{
+    display: none;
+}
+

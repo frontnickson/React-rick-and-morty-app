@@ -1,0 +1,31 @@
+.wrapper{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: var(--max-width-app);
+    margin: auto;
+    width: 100%;
+    background-color: white;
+}
+
+.header__list{
+    display: flex;
+    gap: 15px;
+}
+
+.header__list :global(a.active) {
+    transition: 0.3s;
+    color: var(--color-text-button);
+}
+
+.header__icons{
+    display: flex;
+    gap: 10px;
+}

@@ -1,0 +1,44 @@
+.container {
+    max-width: var(--max-width-app);
+    margin: auto;
+}
+
+.filter__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    height: 35px;
+}
+
+.search__container{
+    display: flex;
+    width: 40%;
+    position: relative;
+}
+
+.input__icon{
+    position: absolute;
+    left: 5px;
+    top: 25%;
+}
+
+.input {
+    height: 35px;
+    width: 100%;
+    border-radius: 7px;
+    padding-left: 35px;
+    border: 1px solid rgb(156, 156, 156);
+}
+
+.form__container {
+    display: flex;
+    width: 60%;
+    gap: 20px;
+}
+
+.form {
+    width: 100%;
+    border-radius: 7px;
+    color: rgb(156, 156, 156);
+    border: 1px solid rgb(156, 156, 156);
+}
