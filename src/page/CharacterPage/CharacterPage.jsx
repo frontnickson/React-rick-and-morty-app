@@ -10,6 +10,8 @@ import styles from './CharacterPage.module.css'
 function CharacterPage() {
   const dispatch = useDispatch()
   const { character, isLoading } = useSelector((state) => state.character)
+  console.log("hello");
+  
 
   const [finishList, setFinishList] = useState([])
 
