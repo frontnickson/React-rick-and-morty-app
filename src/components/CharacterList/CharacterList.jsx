@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+
+// styles
+import '../../styles/global.css';
 import styles from './CharacterList.module.css';
 
 function CharacterList({ finishList, activeButton }) {
@@ -21,12 +24,10 @@ function CharacterList({ finishList, activeButton }) {
   };
 
   const getFavorites = (id, item) => {
-    if (!character.some(char => char.id === id)) {
-      setCharacter([...character, item])
-    } else {
-      const updateChar = character.filter(charId => charId.id !== id)
-      setCharacter(updateChar)
-    }
+
+    if (!character.some(char => char.id === id)) setCharacter([...character, item])
+    else setCharacter(character.filter(charId => charId.id !== id))
+
   }
 
   useEffect(() => { localStorage.setItem('character', JSON.stringify(character)) }, [character])
@@ -37,7 +38,15 @@ function CharacterList({ finishList, activeButton }) {
         {limit.map(item => (
           <ul key={item.id} className={styles.character__item}>
             <li className={styles.character__list}>
-              <button className={styles.button__add} onClick={() => { getFavorites(item.id, item) }}>{character.some(char => char.id === item.id) ? "delete" : "add"}</button>
+
+              <button
+                style={{ position: "absolute", right: "10px", top: "10px" }}
+                className="button_small"
+                onClick={() => { getFavorites(item.id, item) }}
+              >
+                {character.some(char => char.id === item.id) ? "delete" : "add"}
+              </button>
+
               <Link to={`/character/${item.id}`}>
                 <img
                   alt='character_image'
@@ -49,6 +58,7 @@ function CharacterList({ finishList, activeButton }) {
                   {item.species || "not species"}
                 </div>
               </Link>
+
             </li>
           </ul>
         ))}

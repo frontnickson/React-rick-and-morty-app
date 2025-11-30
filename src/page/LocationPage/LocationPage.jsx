@@ -13,6 +13,7 @@ function LocationPage() {
 
     const dispatch = useDispatch()
     const { location, isLoading } = useSelector((state) => state.location)
+    console.log(location);
     
     const [list, setList] = useState([])
     

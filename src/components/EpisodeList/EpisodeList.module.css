@@ -4,8 +4,8 @@
 }
 
 .episodes__container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 240px);
+    display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
@@ -28,7 +28,7 @@
 
 .episodes__item{
     height: 128px;
-    width: 240px;
+    width: 300px;
     background-color: var(--color-element);
     box-shadow: var(--box-shadow);
     display: flex;
